@@ -116,10 +116,10 @@ else
 ```
 ... which is illegal.
 
-That's when you should use the `replace` option by specifying a string, where the code becomes:
+I try to support as many known cases as possible, but if hit a non supported case, please fill an issue and that's when you should use the `replace` option by specifying a string, where the code becomes:
 
 ```
-// assuming 'replace' = '0'
+// assuming 'replace' = "'0'"
 if (condition) '0'
 else '0'
 ```
@@ -166,4 +166,4 @@ TODO
 
 License
 -------
-Copyright (c) 2012 Luís Couto Licensed under the [MIT License](http://couto.mit-license.org)
+Copyright (c) 2013 Luís Couto Licensed under the [MIT License](http://couto.mit-license.org)
