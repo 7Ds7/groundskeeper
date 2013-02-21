@@ -9,7 +9,7 @@ var groundskeeper = require('../'),
         return fs.readFileSync(__dirname + '/fixtures/' + name + '.js', 'utf8');
     };
 
-module.exports = {
+module.exports.Pragmas = {
     'remove pragmas': function () {
         var file = fixture('pragmas/pragmas'),
             clean = fixture('pragmas/pragmas.clean'),
@@ -18,11 +18,8 @@ module.exports = {
                 'debugger': true
             });
 
-        var start = +new Date();
         cleaner.write(file);
-        console.log(+new Date() - start + ' ms');
-
-        assert.equal(cleaner.toString(), clean);
+        assert.equal(clean, cleaner.toString());
     },
 
     'remove validation pragma only': function () {
@@ -34,10 +31,7 @@ module.exports = {
                 pragmas: ['development']
             });
 
-        var start = +new Date();
         cleaner.write(file);
-        console.log(+new Date() - start + ' ms');
-
         assert.equal(cleaner.toString(), clean);
     },
 
@@ -50,10 +44,7 @@ module.exports = {
                 pragmas: ['validation']
             });
 
-        var start = +new Date();
         cleaner.write(file);
-        console.log(+new Date() - start + ' ms');
-
         assert.equal(cleaner.toString(), clean);
     }
 };

@@ -9,18 +9,16 @@ var groundskeeper = require('../'),
         return fs.readFileSync(__dirname + '/fixtures/' + name + '.js', 'utf8');
     };
 
-module.exports = {
+module.exports.Console = {
     'remove console statements': function () {
         var file = fixture('console/console'),
             clean = fixture('console/console.clean'),
             cleaner = groundskeeper({
-                debugger: true,
+                'debugger': true,
                 pragmas: ['validation', 'development']
             });
 
-        var start = +new Date();
         cleaner.write(file);
-        console.log(+new Date() - start + ' ms');
         assert.equal(cleaner.toString(), clean);
     },
 
@@ -32,9 +30,7 @@ module.exports = {
                 pragmas: ['validation', 'development']
             });
 
-        var start = +new Date();
         cleaner.write(file);
-        console.log(+new Date() - start + ' ms');
         assert.equal(cleaner.toString(), clean);
     }
 };

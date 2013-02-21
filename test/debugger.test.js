@@ -9,7 +9,7 @@ var groundskeeper = require('../'),
         return fs.readFileSync(__dirname + '/fixtures/' + name + '.js', 'utf8');
     };
 
-module.exports = {
+module.exports.Debugger = {
     'remove debugger statements': function () {
         var file = fixture('debugger/debugger'),
             clean = fixture('debugger/debugger.clean'),
@@ -18,9 +18,7 @@ module.exports = {
                 pragmas: ['validation', 'development']
             });
 
-        var start = +new Date();
         cleaner.write(file);
-        console.log(+new Date() - start + ' ms');
         assert.equal(cleaner.toString(), clean);
     }
 

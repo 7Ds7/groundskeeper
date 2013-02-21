@@ -9,7 +9,7 @@ var groundskeeper = require('../'),
         return fs.readFileSync(__dirname + '/fixtures/' + name + '.js', 'utf8');
     };
 
-module.exports = {
+module.exports.Namespaced = {
     'remove App.logger.log statements': function () {
         var file = fixture('namespaced/App.logger.log'),
             clean = fixture('namespaced/App.logger.log.clean'),
@@ -20,10 +20,8 @@ module.exports = {
                 'namespace': 'App.logger.log'
             });
 
-        var start = +new Date();
-        cleaner.write(file);
-        console.log(+new Date() - start + ' ms');
 
+        cleaner.write(file);
         assert.equal(cleaner.toString(), clean);
     },
 
@@ -37,9 +35,7 @@ module.exports = {
                 'namespace': 'App.logger'
             });
 
-        var start = +new Date();
         cleaner.write(file);
-        console.log(+new Date() - start + ' ms');
         assert.equal(cleaner.toString(), clean);
     },
 
@@ -53,9 +49,7 @@ module.exports = {
                 'namespace': 'App.logger.log'
             });
 
-        var start = +new Date();
         cleaner.write(file);
-        console.log(+new Date() - start + ' ms');
         assert.equal(cleaner.toString(), clean);
     },
 
@@ -69,9 +63,7 @@ module.exports = {
                 'namespace': 'App.logger'
             });
 
-        var start = +new Date();
         cleaner.write(file);
-        console.log(+new Date() - start + ' ms');
         assert.equal(cleaner.toString(), clean);
     },
 
@@ -85,9 +77,7 @@ module.exports = {
                 'namespace': ['Sushi.log', 'Sushi.warn', 'Sushi.error']
             });
 
-        var start = +new Date();
         cleaner.write(file);
-        console.log(+new Date() - start + ' ms');
         assert.equal(cleaner.toString(), clean);
     },
 
@@ -101,9 +91,7 @@ module.exports = {
                 'namespace': ['Sushi.log', 'Sushi.warn', 'Sushi.error']
             });
 
-        var start = +new Date();
         cleaner.write(file);
-        console.log(+new Date() - start + ' ms');
         assert.equal(cleaner.toString(), clean);
     }
 };

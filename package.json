@@ -16,7 +16,8 @@
     "commander": "~1.0.5",
     "esprima": "~1.0.2",
     "cdir": "~0.1.2",
-    "mocha": "~1.7.0"
+    "mocha": "~1.7.0",
+    "lodash": "~1.0.0-rc.3"
   },
   "devDependencies": {
     "cdir": "~0.1.2",
