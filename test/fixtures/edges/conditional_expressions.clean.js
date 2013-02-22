@@ -17,4 +17,8 @@
         undefined;
 }());
 
-
+// issue #6
+(function () {
+    console && undefined;
+    console && console.log && undefined;
+}());

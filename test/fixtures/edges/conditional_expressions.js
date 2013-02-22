@@ -17,4 +17,8 @@
         console.log('false');
 }());
 
-
+// issue #6
+(function () {
+    console && console.log('Hi!');
+    console && console.log && console.log('Hi!');
+}());
