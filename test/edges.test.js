@@ -19,7 +19,14 @@ module.exports.Edges = {
             cleaner.write(file);
             assert.equal(clean, cleaner.toString());
         },
-        'For Loop': function () {},
+        'For Loop': function () {
+            var file = fixture('edges/for-loops'),
+                clean = fixture('edges/for-loops.clean'),
+                cleaner = groundskeeper();
+
+            cleaner.write(file);
+            assert.equal(clean, cleaner.toString());
+        },
         'While Loop': function () {},
         'Do-While Loop': function () {}
 
