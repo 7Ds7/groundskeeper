@@ -32,7 +32,10 @@ module.exports.Edges = {
 
     },
 
-    'Coma operator': function () {
+    'Unary Expression': function () {
+        var cleaner = groundskeeper();
 
+        cleaner.write('typeof console !== \'undefined\'');
+        console.log(cleaner.toString())
     }
 };
